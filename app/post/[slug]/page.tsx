@@ -11,6 +11,14 @@ async function getData(slug: string): Promise<Post>{
   return data;
 }
 
+export async function generateStaticParams() {
+  const query = `*[_type== "post"]`;
+  const data = await client.fetch(query).then((res) => res.json())
+  return data.map((post: Post) => ({
+    slug: post.slug,
+  }))
+}
+
 export default async function SlugPage({params}: {params: {slug: string}}) {
   const data = await getData(params.slug);
 
