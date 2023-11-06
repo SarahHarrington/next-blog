@@ -3,7 +3,7 @@ import { Post } from "./lib/interface";
 import { client } from "./lib/sanity";
 
 async function getData(): Promise<Post[]> {
-  const query = `*[_type== "post"]`;
+  const query = `*[_type=="post"]`;
   const data = await client.fetch(query);
   return data
 }

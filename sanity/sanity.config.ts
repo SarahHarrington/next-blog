@@ -5,7 +5,7 @@ import {schemaTypes} from './schemas'
 
 export default defineConfig({
   name: 'default',
-  title: 'blog with nextjs',
+  title: 'sarahdoestech blog',
 
   projectId: 'rhfs9aiz',
   dataset: 'production',
