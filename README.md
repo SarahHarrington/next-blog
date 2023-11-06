@@ -38,3 +38,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 
 https://www.youtube.com/watch?v=MqmzrQ1MNG8
+https://medium.com/@andyasprou/how-to-use-vercel-and-route-53-for-your-root-domain-7ee25b4cf9fc
+
+https://nextjs.org/docs/app/api-reference/functions/generate-static-params#multiple-dynamic-segments-in-a-route
+
+https://phosphoricons.com/
+
+https://hipsum.co/?paras=5&type=hipster-centric
