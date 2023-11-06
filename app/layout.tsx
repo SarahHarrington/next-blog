@@ -4,7 +4,6 @@ import './globals.css'
 import Navbar from './components/Navbar'
 import { Providers } from './components/Providers'
 
-const satisfy = Satisfy({ weight: '400', subsets: ['latin'] })
 const lato = Lato({ weight: '400', subsets: ['latin'] })
 
 export const metadata: Metadata = {

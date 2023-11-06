@@ -11,7 +11,19 @@ async function getData(slug: string): Promise<Post>{
   return data;
 }
 
+export async function generateStaticParams(): Promise<string[]> {
+  const query = `*[_type == "post"]`
+
+  const data = await client.fetch(query);
+
+  return data.map((post: Post) => {
+    post.slug.current
+  })
+
+}
+
 export default async function SlugPage({params}: {params: {slug: string}}) {
+  console.log('params', params)
   const data = await getData(params.slug);
 
   const PortableTextComponents = {
@@ -21,6 +33,14 @@ export default async function SlugPage({params}: {params: {slug: string}}) {
       )
     }
   } 
+
+  const formattedDate: string = new Date(data._createdAt).toLocaleDateString('en-US', 
+    {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    }
+  )
 
   return (
     <div className="bg-[#F8FBF7] dark:bg-black-russian-950 p-10 m-10 rounded-md">
@@ -32,12 +52,7 @@ export default async function SlugPage({params}: {params: {slug: string}}) {
                 {data.title}
               </h1>
               <p className="text-base font-medium leading-6 text-purple-300 justify-self-end">
-                {new Date(data._createdAt).toLocaleDateString('en-US', 
-                        {
-                          day: 'numeric',
-                          month: 'short',
-                          year: 'numeric',
-                        })}
+                {formattedDate}
               </p>
             </div>
           </div>
