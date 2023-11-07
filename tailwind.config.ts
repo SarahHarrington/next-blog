@@ -45,6 +45,7 @@ const config: Config = {
     fontFamily: {
       satisfy: ["Satisfy", "cursive"],
       lato: ["Lato", "sans-serif"],
+      firaCode: ["Fira Code", "mono"]
     }
   },
   plugins: [require("@tailwindcss/typography")],

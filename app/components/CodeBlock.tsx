@@ -43,24 +43,24 @@ export default function CodeBlock({code, filename, language, highlightedLines}: 
         getTokenProps }: any
         ) => (
           <pre 
-          className={`${className} !bg-transparent px-2`} 
-          style={style}>
-          {tokens.map((line: any, i: number) => {
-            const lineProps = getLineProps({ line, key: i })
-            if (checkLine(i + 1)) {   
-              // set the background-color of the highlighted lines. 
-              // Use any CSS classnames you like.
-              lineProps.className = `${lineProps.className}
-              bg-[#fef3c8] dark:bg-[#27261c]`
-            }
-            return (
-              <div key={i}>
-              {line.map((token: any, key: any) => (
-                <span key={key }{...getTokenProps({ token })} />
-                ))}
-              </div>
-            )
-          })}
+            className={`${className} !bg-transparent px-2 font-firaCode`} 
+            style={style}>
+            {tokens.map((line: any, i: number) => {
+              const lineProps = getLineProps({ line, key: i })
+              if (checkLine(i + 1)) {   
+                // set the background-color of the highlighted lines. 
+                // Use any CSS classnames you like.
+                lineProps.className = `${lineProps.className}
+                bg-[#fef3c8] dark:bg-[#27261c]`
+              }
+              return (
+                <div key={i}>
+                {line.map((token: any, key: any) => (
+                  <span key={key }{...getTokenProps({ token })} />
+                  ))}
+                </div>
+              )
+            })}
           </pre>
         )}
     </Highlight>

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Satisfy, Lato } from 'next/font/google'
+import { Lato } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar'
 import { Providers } from './components/Providers'
