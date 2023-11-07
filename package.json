@@ -3,10 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "next-dev": "next dev",
+    "sanity-dev": "sanity dev",
+    "next-build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sanity-start": "sanity start",
+    "sanity-build": "sanity build",
+    "deploy": "sanity deploy",
+    "deploy-graphql": "sanity graphql deploy"
   },
   "dependencies": {
     "@portabletext/react": "^3.0.11",
@@ -15,21 +20,33 @@
     "next-sanity": "^5.5.10",
     "next-themes": "^0.2.1",
     "prism-react-renderer": "^2.1.0",
-    "react": "^18",
-    "react-dom": "^18"
+    "@sanity/code-input": "^4.1.1",
+    "@sanity/vision": "^3.19.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-is": "^18.2.0",
+    "sanity": "^3.19.1",
+    "styled-components": "^6.0.7"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^20",
-    "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
-    "eslint": "^8",
     "eslint-config-next": "14.0.1",
     "postcss": "^8",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "@sanity/eslint-config-studio": "^3.0.1",
+    "@types/react": "^18.0.25",
+    "eslint": "^8.6.0",
+    "typescript": "^5.1.6"
+  },
+  "prettier": {
+    "semi": false,
+    "printWidth": 100,
+    "bracketSpacing": false,
+    "singleQuote": true
   }
 }
