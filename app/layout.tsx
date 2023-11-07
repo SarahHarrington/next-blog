@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`${lato.className} bg-hexagons-light dark:bg-hexagons-dark text-dark-russian-950 dark:bg-black-russian-950 dark:selection:black-russian-100 dark:text-white h-full selection:bg-alto-400`} >
         <Providers>
           <Navbar />
-          <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             {children}
           </main>
         </Providers>
