@@ -1,3 +1,5 @@
+import { DocumentIcon, ImageIcon, CodeBlockIcon } from '@sanity/icons'
+
 export default {
   name: 'post',
   type: 'document',
@@ -31,6 +33,7 @@ export default {
         },
         {
           type: 'image',
+          icon: ImageIcon,
           fields: [
             {
               type: 'text',
@@ -38,6 +41,15 @@ export default {
               title: 'Alternative Text'
             }
           ]
+        },
+        {
+          type: 'code',
+          name: 'code',
+          title: 'Code',
+          icon: CodeBlockIcon,
+          options: {
+            withFilename: true,
+          }
         }
       ]
     }

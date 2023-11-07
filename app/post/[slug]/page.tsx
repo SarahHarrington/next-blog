@@ -3,6 +3,7 @@ import { client } from "@/app/lib/sanity"
 import { urlFor } from "@/app/lib/sanityImageUrl";
 import { PortableText } from "@portabletext/react";
 import Image from 'next/image';
+import CodeBlock from '../../components/CodeBlock';
 
 async function getData(slug: string): Promise<Post>{
   const query = `*[_type == "post" && slug.current == "${slug}"][0]`
@@ -19,7 +20,6 @@ export async function generateStaticParams(): Promise<string[]> {
   return data.map((post: Post) => {
     post.slug.current
   })
-
 }
 
 export default async function SlugPage({params}: {params: {slug: string}}) {
@@ -30,6 +30,9 @@ export default async function SlugPage({params}: {params: {slug: string}}) {
     types: {
       image: ({value}: {value: any}) => (
         <Image src={urlFor(value).url()} alt='Image' className="rounded-lg" width={100} height={100}/>
+      ),
+      code: ({value}: {value: any}) => (
+        <CodeBlock language={value.language} code={value.code} filename={value.filename} highlightedLines={value.highlightedLines}/>
       )
     }
   } 
