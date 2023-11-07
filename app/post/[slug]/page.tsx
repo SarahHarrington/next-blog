@@ -33,7 +33,7 @@ export default async function SlugPage({params}: {params: {slug: string}}) {
       ),
       code: ({value}: {value: any}) => (
         <CodeBlock language={value.language} code={value.code} filename={value.filename} highlightedLines={value.highlightedLines}/>
-      )
+      ),
     }
   } 
 

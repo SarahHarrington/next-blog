@@ -10,7 +10,8 @@ export const metadata: Metadata = {
   title: 'SarahDoesBlog',
   description: 'Sarah Does Tech Blog',
   icons: {
-    icon: './favicon.ico'
+    icon: './favicon.ico',
+    apple: './favicon.ico',
   }
 }
 

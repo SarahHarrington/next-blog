@@ -1,8 +1,8 @@
 import { createClient } from "next-sanity";
 
-const projectId = 'rhfs9aiz';
-const dataset = 'production'
-const apiVersion = '2022-03-07'
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET
+const apiVersion = '2023-11-06'
 
 export const client = createClient({
   projectId,
