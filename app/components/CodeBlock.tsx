@@ -1,5 +1,6 @@
 'use client'
 import { ReactElement } from "react";
+//@ts-ignore
 import { Highlight, themes } from "prism-react-renderer"
 
 interface CodeProps {
@@ -53,9 +54,9 @@ export default function CodeBlock({code, filename, language, highlightedLines}: 
               bg-[#fef3c8] dark:bg-[#27261c]`
             }
             return (
-              <div key={i} {...lineProps}>
+              <div key={i}>
               {line.map((token: any, key: any) => (
-                <span {...getTokenProps({ token, key })} />
+                <span key={key }{...getTokenProps({ token })} />
                 ))}
               </div>
             )
