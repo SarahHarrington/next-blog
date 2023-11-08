@@ -3,7 +3,7 @@ import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 import {codeInput} from '@sanity/code-input'
-import {theme} from 'https://themer.sanity.build/api/hues?default=dfdedf;darkest:19091c&primary=f1dfff'
+import { myTheme } from './theme'
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
@@ -18,5 +18,5 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
-  theme
+  theme: myTheme
 })

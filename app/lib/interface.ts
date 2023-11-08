@@ -8,3 +8,9 @@ export interface Post {
   };
   _createdAt: string;
 }
+
+export interface Tag {
+  title: string;
+  _id: string;
+  _createdAt: string;
+}

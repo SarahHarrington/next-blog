@@ -5,7 +5,7 @@ import profilePic from '../../public/Asset 2.svg'
 
 export default function Navbar() {
   return (
-    <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 bg-[#F8FBF7] dark:bg-black-russian-950">
+    <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 bg-[#FFFFFF] dark:bg-black-russian-950">
       <div className="flex justify-between h-16">
         <div className="grid grid-cols-3 justify-items-center items-center w-full">
           <Link href="https://sarahdoes.tech">

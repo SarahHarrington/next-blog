@@ -13,7 +13,7 @@ async function getData(slug: string): Promise<Post>{
 }
 
 export async function generateStaticParams(): Promise<string[]> {
-  const query = `*[_type == "post"]`
+  const query = `*[_type == "post" && !(_id in path("drafts.**")) && defined(slug)]`
 
   const data = await client.fetch(query);
 
@@ -51,7 +51,7 @@ export default async function SlugPage({params}: {params: {slug: string}}) {
   )
 
   return (
-    <div className="bg-[#F8FBF7] dark:bg-black-russian-950 p-10 m-10 rounded-md">
+    <div className="bg-[#FFFFFF] dark:bg-black-russian-950 p-10 m-10 rounded-md">
       <header className="pt-6 xl-pb-6">
         <div className="space-y-1">
           <div className="">

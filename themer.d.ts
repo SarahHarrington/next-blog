@@ -1,4 +1,4 @@
-declare module 'https://themer.sanity.build/api/hues?*' {
+declare module 'http://themer.sanity.build/api/hues?*' {
   interface Hue
     extends Omit<import('@sanity/color').ColorHueConfig, 'title' | 'midPoint'> {
     midPoint: 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950

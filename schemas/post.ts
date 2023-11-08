@@ -1,4 +1,4 @@
-import { DocumentIcon, ImageIcon, CodeBlockIcon } from '@sanity/icons'
+import { ImageIcon, CodeBlockIcon } from '@sanity/icons'
 
 export default {
   name: 'post',
@@ -22,6 +22,35 @@ export default {
       options: {
         source: 'title'
       }
+    },
+    {
+      name: "categories",
+      title: "Categories",
+      type: "array",
+      of: [{ type: "reference", to: { type: "category" } }],
+    },
+    {
+      name: "tags",
+      title: "Tags",
+      type: "array",
+      of: [{ type: "reference", to: { type: "tags" } }],
+    },
+    {
+      name: 'internalLink',
+      type: 'object',
+      title: 'Internal link',
+      fields: [
+        {
+          name: 'reference',
+          type: 'reference',
+          title: 'Reference',
+          to: [
+            { type: 'post' },
+            { type: 'category'},
+            { type: 'tags' },
+          ]
+        }
+      ]
     },
     {
       name: 'content',
