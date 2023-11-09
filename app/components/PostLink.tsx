@@ -39,7 +39,7 @@ export default function PostLink({post}: PostProps) {
           </p>
           <div className="flex flex-wrap">
             {post.tags && post.tags.map((tag) => (
-              <p className="p-2 mx-2 bg-black-russian-100 rounded-md text-black-russian-950">
+              <p key={tag._id} className="p-2 mx-2 bg-black-russian-100 rounded-md text-black-russian-950">
                 {tag.title}
               </p>
             ))}
