@@ -1,6 +1,7 @@
 import { Post, Tag } from "./lib/interface";
 import { client } from "./lib/sanity";
 import PostLink from "./components/PostLink";
+import TagButton from "./components/TagButton";
 
 async function getPosts(): Promise<Post[]> {
   const query = `*[_type == "post" && !(_id in path("drafts.**"))] {
@@ -9,7 +10,8 @@ async function getPosts(): Promise<Post[]> {
       slug,
       title,
       _id,
-      meta_description
+      meta_description,
+      _createdAt
     }
   }`;
 
@@ -30,7 +32,15 @@ export default async function IndexPage() {
   const allTags = await getTags();
   
   return (
-    <div>
+    <div className="grid grid-cols-[200px_auto] gap-x-5">
+      <div className="flex flex-wrap mt-20">
+        {allTags.map((tag: Tag) => (
+          <TagButton 
+            key={tag._id} 
+            tag={tag}
+          />
+        ))}
+      </div>
       <div className="divide-y divide-black-russian-950 dark:divide-black-russian-200">
         <div className="space-y-2 pt-6 pb-8 md:space-y5">
           <h1 className="text-black-russian-950 dark:text-black-russian-200 text-3xl">
@@ -43,11 +53,6 @@ export default async function IndexPage() {
             )  
           )}
         </ul>
-      </div>
-      <div>
-        {allTags.map((tag) => (
-          <p>{tag.title}</p>
-        ))}
       </div>
     </div>
   )
