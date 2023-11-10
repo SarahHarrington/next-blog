@@ -68,6 +68,16 @@ export default {
               type: 'text',
               name: 'alt',
               title: 'Alternative Text'
+            },
+            {
+              type: 'string',
+              name: 'height',
+              title: 'Height'
+            },
+            {
+              type: 'string',
+              name: 'width',
+              title: 'Width'
             }
           ]
         },
