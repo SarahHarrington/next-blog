@@ -32,8 +32,8 @@ export default async function IndexPage() {
   const allTags = await getTags();
   
   return (
-    <div className="grid grid-cols-[200px_auto] gap-x-5">
-      <div className="flex flex-wrap mt-20">
+    <div className="grid grid-cols-1 md:grid-cols-[200px_auto] gap-x-5">
+      <div className="flex flex-wrap mt-10 md:mt-20">
         {allTags.map((tag: Tag) => (
           <TagButton 
             key={tag._id} 
@@ -41,9 +41,9 @@ export default async function IndexPage() {
           />
         ))}
       </div>
-      <div className="divide-y divide-black-russian-950 dark:divide-black-russian-200">
-        <div className="space-y-2 pt-6 pb-8 md:space-y5">
-          <h1 className="text-black-russian-950 dark:text-black-russian-200 text-3xl">
+      <div className="">
+        <div className="space-y-2 pt-6 pb-6 md:space-y5">
+          <h1 className="text-black-russian-950 dark:text-black-russian-200 text-xl md:text-3xl">
             All Posts
           </h1>
         </div>

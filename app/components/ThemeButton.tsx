@@ -17,13 +17,13 @@ export default function ThemeButton() {
   }
 
   return (
-    <button onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}>
+    <button className="justify-self-end pr-6 md:justify-self-center" onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}>
       {resolvedTheme === 'dark' ? (
         ( 
-          <Sun size={32} className="hover:fill-black-russian-300 hover:drop-shadow-sm"/>
+          <Sun size={24} className="hover:fill-black-russian-300 hover:drop-shadow-sm fill-[#FFFFFF]"/>
         )
       ) : ( 
-        <MoonStars size={32} className="hover:fill-black-russian-300"/>
+        <MoonStars size={24} className="hover:fill-black-russian-300 fill-black-russian-950"/>
       )}
     </button>
   )
