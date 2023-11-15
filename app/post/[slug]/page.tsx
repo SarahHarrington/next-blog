@@ -51,15 +51,15 @@ export default async function SlugPage({params}: {params: {slug: string}}) {
   )
 
   return (
-    <div className="bg-[#FFFFFF] dark:bg-black-russian-950 p-10 m-10 rounded-md">
+    <div className="bg-[#FFFFFF] dark:bg-black-russian-950 p-4 sm:p-10 m-2 sm:m-10 rounded-md">
       <header className="pt-6 xl-pb-6">
         <div className="space-y-1">
           <div className="">
-            <div className="grid grid-cols-2">
-              <h1 className="text-3xl font-extrabold tracking-tight text-black-russian-950 dark:text-black-russian-100 sm:text-10 md:text-5xl md:leading-14">
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight text-black-russian-950 dark:text-black-russian-100 md:leading-14">
                 {data.title}
               </h1>
-              <p className="text-base font-medium leading-6 text-purple-300 justify-self-end">
+              <p className="text-base font-medium leading-6 text-purple-300 justify-self-start sm:justify-self-end">
                 {formattedDate}
               </p>
             </div>

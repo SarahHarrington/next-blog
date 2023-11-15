@@ -20,7 +20,7 @@ export default function PostLink({post}: PostProps) {
   
   return (
     <li key={post._id} className="py-4">
-      <article className="space-y-2 xl:grid xl:grid-cols-3 xl:items-baseline xl:space-y-0 bg-[#FFFFFF] dark:bg-black-russian-950 p-6 md:p-10 border-2 border-black-russian-950 rounded-md dark:border-black-russian-100 shadow-md hover:bg-black-russian-50 dark:hover:bg-black-russian-900">
+      <article className="space-y-2 xl:grid xl:grid-cols-3 xl:items-baseline xl:space-y-0 bg-[#FFFFFF] dark:bg-black-russian-950 p-6 md:p-10 border-2 border-black-russian-950 rounded-md dark:border-black-russian-100 shadow-md dark:shadow-black-russian-900/25 hover:bg-black-russian-50 dark:hover:bg-black-russian-900">
         <Link href={`/post/${post.slug.current}`} prefetch className="space-y-3 xl:col-span-3">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <h3 className="text-lg md:text-2xl font-bold leading-8 tracking-tight text-black-russian-950 dark:text-black-russian-100">
