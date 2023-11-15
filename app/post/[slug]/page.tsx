@@ -23,7 +23,6 @@ export async function generateStaticParams(): Promise<string[]> {
 }
 
 export default async function SlugPage({params}: {params: {slug: string}}) {
-  console.log('params', params)
   const data = await getData(params.slug);
 
   const PortableTextComponents = {
@@ -45,7 +44,7 @@ export default async function SlugPage({params}: {params: {slug: string}}) {
     }
   } 
 
-  const formattedDate: string = new Date(data._createdAt).toLocaleDateString('en-US', 
+  const formattedDate: string = new Date(data._updatedAt).toLocaleDateString('en-US', 
     {
       day: 'numeric',
       month: 'short',

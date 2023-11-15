@@ -18,7 +18,6 @@ async function getPosts(slug: string, params: Params): Promise<Post[]> {
   }`;
 
   const posts = await client.fetch(query, params);
-  console.log('posts', posts)
   return posts
 }
 

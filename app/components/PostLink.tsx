@@ -8,15 +8,13 @@ interface PostProps {
 }
 
 export default function PostLink({post}: PostProps) {
-  const formattedDate: string = new Date(post._createdAt).toLocaleDateString('en-US', 
+  const formattedDate: string = new Date(post._updatedAt).toLocaleDateString('en-US', 
     {
       day: 'numeric',
       month: 'short',
       year: 'numeric',
     }
   )
-
-  console.log(post)
   
   return (
     <li key={post._id} className="py-4">

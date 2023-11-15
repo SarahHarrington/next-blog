@@ -1,4 +1,5 @@
 export interface Post {
+  _updatedAt: string | number | Date;
   title: string;
   overview: string;
   content: any;

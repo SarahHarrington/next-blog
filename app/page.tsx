@@ -16,14 +16,12 @@ async function getPosts(): Promise<Post[]> {
   }`;
 
   const posts = await client.fetch(query);
-  console.log('posts', posts)
   return posts
 }
 
 async function getTags(): Promise<Tag[]> {
   const query = `*[_type == "tags" && !(_id in path("drafts.**"))]`
   const tags = await client.fetch(query)
-  console.log('tags', tags)
   return tags
 }
 
