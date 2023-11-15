@@ -28,9 +28,12 @@ export default async function SlugPage({params}: {params: {slug: string}}) {
 
   const PortableTextComponents = {
     types: {
-      image: ({value}: {value: any}) => (
-        <Image src={urlFor(value).url()} alt='Image' className="rounded-lg" width={100} height={100}/>
-      ),
+      image: ({value}: {value: any}) => {
+        const imgSizes = value.asset._ref.split('-')
+        const height = imgSizes[2].split('x')[1]
+        const width = imgSizes[2].split('x')[0]
+        return <Image src={urlFor(value).url()} alt='Image' className="rounded-lg justify-center" width={width} height={height}/>
+      },
       code: ({value}: {value: any}) => (
         <CodeBlock language={value.language} code={value.code} filename={value.filename} highlightedLines={value.highlightedLines}/>
       ),
