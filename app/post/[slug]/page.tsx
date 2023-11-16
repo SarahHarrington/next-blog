@@ -12,15 +12,15 @@ async function getData(slug: string): Promise<Post>{
   return data;
 }
 
-export async function generateStaticParams(): Promise<string[]> {
-  const query = `*[_type == "post" && !(_id in path("drafts.**")) && defined(slug)]`
+// export async function generateStaticParams(): Promise<string[]> {
+//   const query = `*[_type == "post" && !(_id in path("drafts.**")) && defined(slug)]`
 
-  const data = await client.fetch(query);
+//   const data = await client.fetch(query);
 
-  return data.map((post: Post) => {
-    post.slug.current
-  })
-}
+//   return data.map((post: Post) => {
+//     post.slug.current
+//   })
+// }
 
 export default async function SlugPage({params}: {params: {slug: string}}) {
   const data = await getData(params.slug);
